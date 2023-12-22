@@ -11,7 +11,7 @@ function App() {
     if (isRunning) {
       intervalId = setInterval(() => {
         setElapsedTime((prevElapsedTime) => prevElapsedTime + 1);
-      }, 100);
+      }, 1000);
     } else {
       clearInterval(intervalId);
     }
