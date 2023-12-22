@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     let intervalId;
-
+  
     if (isRunning) {
       intervalId = setInterval(() => {
         setElapsedTime((prevElapsedTime) => prevElapsedTime + 1);
@@ -15,11 +15,12 @@ function App() {
     } else {
       clearInterval(intervalId);
     }
-
+  
     return () => {
       clearInterval(intervalId);
     };
   }, [isRunning]);
+  
 
   const startStop = () => {
     setIsRunning((prevIsRunning) => !prevIsRunning);
@@ -42,7 +43,7 @@ function App() {
       <h1>Stopwatch</h1>
       <p>Time: {formatTime(elapsedTime)}</p>
       <button onClick={startStop}>{isRunning ? "Stop" : "Start"}</button>
-      <button onClick={reset}>reset</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }
